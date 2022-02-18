@@ -14,10 +14,8 @@ public class SelectionSortImpl {
                 if (arr[i] > arr[maxIndex])
                     maxIndex = i;
             }
-
             swap(arr, maxIndex, lastUnsortedIndex);
         }
-
         return arr;
     }
 
