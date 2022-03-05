@@ -32,7 +32,27 @@ public class LinkedListImpl {
             }
             currentNode.next = newNode;
         }
+        size++;
+    }
 
+    //Method to insert element in sorted order
+    public void insertSorted(int e) {
+        Node newNode = new Node(e);
+
+        if (head == null) {
+            newNode.next = null;
+            head = newNode;
+        } else if(head.element >= e) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            Node currentNode = head;
+            while(currentNode.next != null && currentNode.next.element < e) {
+                currentNode = currentNode.next;
+            }
+            newNode.next = currentNode.next;
+            currentNode.next = newNode;
+        }
         size++;
     }
 
@@ -60,12 +80,21 @@ public class LinkedListImpl {
 
         LinkedListImpl linkedList = new LinkedListImpl();
 
-        linkedList.addLast(10);
+/*        linkedList.addLast(10);
         linkedList.print();
         linkedList.addLast(20);
         linkedList.print();
         linkedList.addFirst(5);
+        linkedList.print();*/
+
+        linkedList.insertSorted(30);
         linkedList.print();
+        linkedList.insertSorted(20);
+        linkedList.insertSorted(40);
+        linkedList.insertSorted(5);
+        linkedList.insertSorted(10);
+        linkedList.print();
+
     }
 
 }
