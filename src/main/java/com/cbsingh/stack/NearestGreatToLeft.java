@@ -17,22 +17,15 @@ public class NearestGreatToLeft {
 
         int[] tempArr = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
+            tempArr[i] = -1;
 
-            if (stack.isEmpty()) {
-                tempArr[i] = -1;
-            } else if (stack.peek() > arr[i]) {
-                tempArr[i] = stack.peek();
-            } else {
-                while (!stack.empty() && stack.peek() < arr[i]) {
-                    stack.pop();
-                }
-
-                if (stack.isEmpty()) {
-                    tempArr[i] = -1;
-                } else {
-                    tempArr[i] = stack.peek();
-                }
+            while (!stack.empty() && stack.peek() < arr[i]) {
+                stack.pop();
             }
+
+            if (!stack.isEmpty())
+                tempArr[i] = stack.peek();
+
             stack.push(arr[i]);
         }
 
@@ -41,11 +34,9 @@ public class NearestGreatToLeft {
     }
 
     private static void nearestGreatToLeftBruteForce(int[] arr) {
-
         int[] temp = new int[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
-
             for (int j = i - 1; j >= 0; j--) {
 
                 if (arr[j] > arr[i]) {
@@ -55,8 +46,6 @@ public class NearestGreatToLeft {
             }
             //temp[i] = -1;
         }
-
-        System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(temp));
     }
 }
