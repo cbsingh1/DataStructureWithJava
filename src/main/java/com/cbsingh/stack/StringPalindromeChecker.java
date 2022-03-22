@@ -5,12 +5,9 @@ import java.util.LinkedList;
 public class StringPalindromeChecker {
 
     private static boolean checkIfPalindrome(String str) {
-
         String strLowerCase = str.toLowerCase();
 
         for (int i = 0, j = strLowerCase.length() - 1; i < j; i++, j--) {
-
-
             while (isSpecialChar(strLowerCase.charAt(i))) {
                 i++;
             }
@@ -22,7 +19,6 @@ public class StringPalindromeChecker {
                 return false;
             }
         }
-
         return true;
     }
 
