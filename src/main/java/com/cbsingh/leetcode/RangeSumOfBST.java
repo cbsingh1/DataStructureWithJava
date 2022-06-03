@@ -1,4 +1,4 @@
-package com.cbsingh.tree;
+package com.cbsingh.leetcode;
 
 import java.util.Stack;
 

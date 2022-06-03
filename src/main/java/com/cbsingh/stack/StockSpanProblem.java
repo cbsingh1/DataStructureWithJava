@@ -6,7 +6,6 @@ import java.util.Stack;
 public class StockSpanProblem {
     public static void main(String[] args) {
         int[] stockPriceArr = {100, 80, 60, 70, 60, 75, 85};
-
         //System.out.println(Arrays.toString(computeStockSpanBruteForce(stockPriceArr)));
         System.out.println(Arrays.toString(computeStockSpanWithStack(stockPriceArr)));
     }
@@ -14,7 +13,7 @@ public class StockSpanProblem {
     private static int[] computeStockSpanBruteForce(int[] stockPriceArr) {
         int tempArr[] = new int[stockPriceArr.length];
 
-        //Here i is starting with to compute value for 0th position in temp array.
+        //Here i is starting with 0 to compute value for 0th position in temp array.
         for (int i = 0; i < stockPriceArr.length; i++) {
             tempArr[i] = -1;
             for (int j = i - 1; j >= 0; j--) {

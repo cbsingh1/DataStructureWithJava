@@ -17,11 +17,9 @@ public class NearestSmallerToRight {
         Stack<Integer> stack = new Stack<>();
 
         //Here, we are starting with last index,
-        // just to fill last element with -1,
-        // if not needed, then we can start with arr.length -2
+        // just to fill last element with -1, if not needed, then we can start with arr.length -2
         for (int i = arr.length-1; i>=0; i--) {
             tempArr[i] = -1;
-
             while(!stack.isEmpty() && stack.peek() > arr[i]){
                 stack.pop();
             }

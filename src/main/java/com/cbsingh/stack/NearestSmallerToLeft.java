@@ -3,7 +3,7 @@ package com.cbsingh.stack;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class NearestSmallerElementToLeft {
+public class NearestSmallerToLeft {
 
     static void nearestSmalltoLeftUsingBruteForce(int[] arr) {
         int []tempArr = new int[arr.length];
