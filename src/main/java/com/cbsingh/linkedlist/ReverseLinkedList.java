@@ -1,26 +1,5 @@
 package com.cbsingh.linkedlist;
 
-class ListNode {
-     int val;
-     ListNode next;
-     ListNode() {}
-     ListNode(int val) { this.val = val; }
-     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-
-    @Override
-    public String toString() {
-        return String.valueOf(val);
-    }
-
-    void printList(ListNode node) {
-         while (node != null) {
-             System.out.print(node.val + "->");
-             node = node.next;
-         }
-        System.out.println("null");
-    }
- }
-
 public class ReverseLinkedList {
     public static ListNode reverseList(ListNode head) {
         ListNode prev = null, nextNode;
@@ -31,6 +10,27 @@ public class ReverseLinkedList {
             head =nextNode;
         }
         return prev;
+    }
+
+    static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+        @Override
+        public String toString() {
+            return String.valueOf(val);
+        }
+
+        void printList(ListNode node) {
+            while (node != null) {
+                System.out.print(node.val + "->");
+                node = node.next;
+            }
+            System.out.println("null");
+        }
     }
 
     public static void main(String[] args) {
