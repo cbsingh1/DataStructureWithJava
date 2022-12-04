@@ -17,7 +17,7 @@ public class LeetCode153_FindMinInRotatedSortedArray {
             else
                 left = mid + 1;
         }
-        return left;
+        return nums[left];
     }
 
     public static int findMin(int[] nums) {

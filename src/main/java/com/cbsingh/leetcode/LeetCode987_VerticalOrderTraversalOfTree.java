@@ -7,13 +7,11 @@ import java.util.*;
 public class LeetCode987_VerticalOrderTraversalOfTree {
 
     public static void main(String[] args) {
-        TreeNode left = new TreeNode(2);
-        TreeNode right = new TreeNode(7);
-        TreeNode root = new TreeNode(4, left, right);
-        left.left = new TreeNode(1);
-        left.right = new TreeNode(3);
-        right.left = new TreeNode(6);
-        right.right = new TreeNode(9);
+        TreeNode left = new TreeNode(9);
+        TreeNode right = new TreeNode(20);
+        TreeNode root = new TreeNode(3, left, right);
+        right.left = new TreeNode(15);
+        right.right = new TreeNode(7);
 
         System.out.println(verticalTraversal(root));
     }
