@@ -1,11 +1,9 @@
 package com.cbsingh.heap;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.PriorityQueue;
 
-public class FindKClosetNumbers {
+public class FindKClosetNumbersSortedArr {
     public static void main(String[] args) {
 
         int arr[] = {1,2,3,4,5,6};
@@ -21,11 +19,9 @@ public class FindKClosetNumbers {
             else
                 high--;
         }
-
         ArrayList<Integer> al = new ArrayList<>();
         for(int i = low; i <= high; i++)
             al.add(arr[i]);
-
         return al;
     }
 }
