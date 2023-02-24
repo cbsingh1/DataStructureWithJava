@@ -11,7 +11,7 @@ public class LeetCode2244_MinRoundToCompleteAllTask {
         int answer=0;
         Map<Integer, Integer> taskCountMap = new HashMap<>();
         Arrays.stream(tasks)
-                .forEach(n -> taskCountMap.put(n, taskCountMap.getOrDefault(n, 0)+1));sr
+                .forEach(n -> taskCountMap.put(n, taskCountMap.getOrDefault(n, 0)+1));
 
         for(int val : taskCountMap.values()) {
             if(val==1) return -1;
