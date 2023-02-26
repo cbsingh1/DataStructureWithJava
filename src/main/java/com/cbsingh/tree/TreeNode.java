@@ -109,17 +109,17 @@ public class TreeNode {
         TreeNode left = new TreeNode(2);
         TreeNode right = new TreeNode(3);
         TreeNode root = new TreeNode(1, left, right);
-        left.right = new TreeNode(4);
+/*        left.right = new TreeNode(4);
         left.right.left = new TreeNode(6);
         left.right.right = new TreeNode(7);
 
         right.left=new TreeNode(5);
-        right.left.right = new TreeNode(8);
+        right.left.right = new TreeNode(8);*/
 
 
        // System.out.println(preOrderTraversalIterative(root));
        // System.out.println(inOrderTraversalIterative(root));
-       // System.out.println(postOrderTraversalIterative(root));
-        System.out.println(levelOrderTraversalIterative(root));
+        System.out.println(postOrderTraversalIterative(root));
+        //System.out.println(levelOrderTraversalIterative(root));
     }
 }
