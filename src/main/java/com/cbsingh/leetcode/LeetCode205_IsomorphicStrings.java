@@ -19,10 +19,47 @@ public class LeetCode205_IsomorphicStrings {
         return true;
     }
 
+    private static boolean checkIfStringAreIsomorphicWithMap2(String s, String t) {
+        if (s == null || t == null) return false;
+        if (s.length() != t.length()) return false;
+
+        Map<Character, Integer> mapS = new HashMap<Character, Integer>();
+        Map<Character, Integer> mapT = new HashMap<Character, Integer>();
+
+        for (int i = 0; i < s.length(); i++) {
+            int indexS = mapS.getOrDefault(s.charAt(i), -1);
+            int indexT = mapT.getOrDefault(t.charAt(i), -1);
+
+            if (indexS != indexT) {
+                return false;
+            }
+
+            mapS.put(s.charAt(i), i);
+            mapT.put(t.charAt(i), i);
+        }
+
+        return true;
+    }
+
+    private static boolean checkIfStringAreIsomorphicWithMap3(String s, String t){
+        int[] m1 = new int[256], m2 = new int[256];
+
+        for (int i = 0; i < 256; i++)
+            m1[i] = m2[i] = -1;
+
+
+        for (int i = 0; i < s.length(); i++) {
+            if (m1[s.charAt(i)] != m2[t.charAt(i)]) return false;
+
+            m1[s.charAt(i)] = m2[t.charAt(i)] = i ;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
-        System.out.println(checkIfStringAreIsomorphicWithMap("egg", "add"));
-        System.out.println(checkIfStringAreIsomorphicWithMap("badc", "baba"));
-        System.out.println(checkIfStringAreIsomorphicWithMap("foo", "bar"));
-        System.out.println(checkIfStringAreIsomorphicWithMap("paper", "title"));
+        System.out.println(checkIfStringAreIsomorphicWithMap3("egg", "add"));
+        //System.out.println(checkIfStringAreIsomorphicWithMap("badc", "baba"));
+        //System.out.println(checkIfStringAreIsomorphicWithMap("foo", "bar"));
+        //System.out.println(checkIfStringAreIsomorphicWithMap("paper", "title"));
     }
 }
