@@ -9,6 +9,7 @@ public class DeleteMiddleElementOfStack {
         stack.push(6);
         stack.push(7);
         stack.push(8);
+        stack.push(9);
 
         System.out.println(stack);
         stack = deleteMiddleElement(stack);

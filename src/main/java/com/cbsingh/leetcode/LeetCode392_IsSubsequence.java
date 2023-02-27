@@ -13,6 +13,20 @@ public class LeetCode392_IsSubsequence {
         return sCounter == s.length();
     }
 
+    private static boolean checkIsSubsequenceUsingRecursion(String s, String t) {
+        if(isSubsequenceHelper(s, t, s.length(), t.length()))
+            return true;
+        return false;
+    }
+
+    private static boolean isSubsequenceHelper(String s, String t, int sLength, int tLength) {
+        if(sLength==0) return true;
+        if(tLength==0) return false;
+        if(s.charAt(sLength-1)==t.charAt(tLength-1))
+            return isSubsequenceHelper(s, t, sLength-1, tLength-1);
+        return isSubsequenceHelper(s, t, sLength, tLength-1);
+    }
+
     private static boolean checkIsSubsequenceUsingJavaIndexOfMethod(String s, String t) {
         int prev = -1;
         for (int i = 0; i < s.length(); i++) {
@@ -23,8 +37,8 @@ public class LeetCode392_IsSubsequence {
     }
 
     public static void main(String[] args) {
-        System.out.println(checkIsSubsequence("abc", "ahbgdc"));
-        System.out.println(checkIsSubsequence("axc", "ahbgdc"));
-        System.out.println(checkIsSubsequence("", "ahbgdc"));
+        System.out.println(checkIsSubsequenceUsingRecursion("abc", "ahbgdc"));
+        //System.out.println(checkIsSubsequence("axc", "ahbgdc"));
+       // System.out.println(checkIsSubsequence("", "ahbgdc"));
     }
 }

@@ -6,16 +6,15 @@ public class ReverseStackUsingRecursion {
 
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<Integer>();
+        stack.push(2);
+        stack.push(1);
         stack.push(3);
-        stack.push(4);
-        stack.push(5);
-        stack.push(6);
-        stack.push(7);
-        stack.push(8);
 
         System.out.println(stack);
+        System.out.println(stack.peek());
         stack = reverseStack(stack);
         System.out.println(stack);
+        System.out.println(stack.peek());
     }
 
     private static Stack<Integer> reverseStack(Stack<Integer> stack) {
@@ -29,7 +28,7 @@ public class ReverseStackUsingRecursion {
     }
 
     private static Stack<Integer> insertElementAtEnd(Stack<Integer> stack, int lastElement) {
-        if(stack.size()==0) {
+        if(stack.size()==0 || stack.peek() <= lastElement) {
             stack.push(lastElement);
             return stack;
         }
