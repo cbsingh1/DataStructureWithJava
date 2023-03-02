@@ -38,10 +38,7 @@ public class LeetCode21_Merge2SortedLinkedList {
             }
             tail =tail.next;
         }
-        if(list1 != null)
-            tail.next = list1;
-        else if(list2!= null)
-            tail.next = list2;
+        tail.next = list1==null ? list2 : list1;
         return dummy.next;
     }
 
