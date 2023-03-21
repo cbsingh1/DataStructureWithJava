@@ -20,9 +20,21 @@ public class TreeNode {
         this.right = right;
     }
 
-    @Override
-    public String toString() {
-        return String.valueOf(val);
+    public static void main(String[] args) {
+        TreeNode left = new TreeNode(2);
+        TreeNode right = new TreeNode(3);
+        left.left = new TreeNode(4);
+        left.right = new TreeNode(5);
+        right.left = new TreeNode(6);
+        right.right = new TreeNode(7);
+        TreeNode root = new TreeNode(1, left, right);
+
+        System.out.println(postOrderTraversalUsing2Stacks(root));
+        System.out.println(postOrderTraversalUsing1Stack(root));
+        System.out.println(postOrderTraversalIterative(root));
+        //System.out.println(preOrderTraversalIterative(root));
+        // System.out.println(inOrderTraversalIterative(root));
+        //System.out.println(levelOrderTraversalIterative(root));
     }
 
     static List<Integer> inOrderTraversalIterative(TreeNode root) {
@@ -30,11 +42,11 @@ public class TreeNode {
         List<Integer> list = new ArrayList<>();
         TreeNode current = root;
         while (true) {
-            while(current != null) {
+            while (current != null) {
                 stack.add(current);
                 current = current.left;
             }
-            if(stack.isEmpty())
+            if (stack.isEmpty())
                 break;
 
             current = stack.pop();
@@ -50,12 +62,12 @@ public class TreeNode {
         List<Integer> list = new ArrayList<>();
         TreeNode current = root;
         while (true) {
-            while(current != null) {
+            while (current != null) {
                 list.add(current.val);
                 stack.add(current);
                 current = current.left;
             }
-            if(stack.isEmpty())
+            if (stack.isEmpty())
                 break;
 
             current = stack.pop();
@@ -71,25 +83,40 @@ public class TreeNode {
         TreeNode previous = null;
 
         while (true) {
-            while(current != null) {
+            while (current != null) {
                 stack.add(current);
                 current = current.left;
             }
-            if(stack.isEmpty()) break;
-            while (current ==null && !stack.isEmpty()) {
+            if (stack.isEmpty()) break;
+            while (current == null && !stack.isEmpty()) {
                 current = stack.peek();
-                if(current.right==null || current.right == previous) {
+                if (current.right == null || current.right == previous) {
                     list.add(current.val);
                     stack.pop();
                     previous = current;
                     current = null;
-                }
-                else {
+                } else {
                     current = current.right;
                 }
             }
         }
         return list;
+    }
+
+    static List<Integer> postOrderTraversalUsing2Stacks(TreeNode root) {
+        if (root == null) return null;
+        Stack<TreeNode> stack1 = new Stack<>();
+        Stack<Integer> stack2 = new Stack<>();
+        stack1.push(root);
+        while (!stack1.isEmpty()) {
+            TreeNode current = stack1.pop();
+            if (current.left != null) stack1.push(current.left);
+            if (current.right != null) stack1.push(current.right);
+            stack2.push(current.val);
+        }
+
+        Collections.reverse(stack2);
+        return stack2;
     }
 
     public static List<Integer> levelOrderTraversalIterative(TreeNode root) {
@@ -99,27 +126,39 @@ public class TreeNode {
         while (!queue.isEmpty()) {
             TreeNode current = queue.remove();
             list.add(current.val);
-            if(current.left != null)   queue.add(current.left);
-            if(current.right != null)  queue.add(current.right);
+            if (current.left != null) queue.add(current.left);
+            if (current.right != null) queue.add(current.right);
         }
         return list;
     }
 
-    public static void main(String[] args) {
-        TreeNode left = new TreeNode(2);
-        TreeNode right = new TreeNode(3);
-        TreeNode root = new TreeNode(1, left, right);
-/*        left.right = new TreeNode(4);
-        left.right.left = new TreeNode(6);
-        left.right.right = new TreeNode(7);
+    static List<Integer> postOrderTraversalUsing1Stack(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root, prev = root;
+        List<Integer> resultList = new ArrayList<>();
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            current = stack.peek();
+            if (current.right != null && current.right != prev) {
+                current = current.right;
+            } else {
+                current = stack.pop();
+                resultList.add(current.val);
+                prev = current;
+                current = null;
+            }
+        }
+        return resultList;
 
-        right.left=new TreeNode(5);
-        right.left.right = new TreeNode(8);*/
+    }
 
-
-       // System.out.println(preOrderTraversalIterative(root));
-       // System.out.println(inOrderTraversalIterative(root));
-        System.out.println(postOrderTraversalIterative(root));
-        //System.out.println(levelOrderTraversalIterative(root));
+    @Override
+    public String toString() {
+        return String.valueOf(val);
     }
 }
+
+

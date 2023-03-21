@@ -10,28 +10,26 @@ public class SortStackWithRecursion {
         stack.push(2);
         stack.push(0);
         System.out.println(stack);
-        stack = sort(stack);
+        sort(stack);
         System.out.println(stack);
     }
 
-    static Stack<Integer> sort(Stack<Integer> stack) {
+    static void sort(Stack<Integer> stack) {
         if(stack.size()==1) {
-            return stack;
+            return;
         }
         int temp = stack.pop();
-        stack = sort(stack);
-        stack = insert(stack, temp);
-        return stack;
+        sort(stack);
+        insertLastElement(stack, temp);
     }
 
-    private static Stack<Integer> insert(Stack<Integer> stack, int temp) {
+    private static void insertLastElement(Stack<Integer> stack, int temp) {
         if(stack.size()==0 || stack.peek()<= temp) {
             stack.push(temp);
-            return stack;
+            return;
         }
         int temp1 = stack.pop();
-        stack = insert(stack, temp);
+        insertLastElement(stack, temp);
         stack.push(temp1);
-        return stack;
     }
 }
