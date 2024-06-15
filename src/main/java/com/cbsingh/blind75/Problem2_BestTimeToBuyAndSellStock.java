@@ -1,4 +1,4 @@
-package com.cbsingh.leetcode;
+package com.cbsingh.blind75;
 
 public class Problem2_BestTimeToBuyAndSellStock {
     public static int maxProfit(int[] prices) {
