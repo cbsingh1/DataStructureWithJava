@@ -1,17 +1,11 @@
 package com.cbsingh.leetcode;
 
-import java.util.Stack;
-
-public class Java858_MirrorReflection {
+public class Leetcode858_MirrorReflection {
     public static void main(String[] args) {
-
-        System.out.println(mirrorReflection(2,1));
-        String s = "ABC";
-        Stack<Character> stack = new Stack<>();
-
+        test(2,1);
     }
 
-    public static int mirrorReflection(int p, int q) {
+    public int mirrorReflection(int p, int q) {
         int ext = q, reflection = p;
         while(ext % 2 == 0 && reflection % 2 == 0){
             ext /= 2;
@@ -21,5 +15,13 @@ public class Java858_MirrorReflection {
         if (ext % 2 == 1 && reflection % 2 == 1) return 1;
         if (ext % 2 == 1 && reflection % 2 == 0) return 2;
         return -1;
+    }
+
+    static void test(int p, int q) {
+        var cut = new Leetcode858_MirrorReflection();
+
+        System.out.println("Input: " + p +", " + q);
+        System.out.println("Result: " + cut.mirrorReflection(p,q));
+        System.out.println("---------------");
     }
 }
