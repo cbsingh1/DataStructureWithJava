@@ -12,7 +12,7 @@ public class LeetCode5_LongestPalindromicSubstring {
 
         for (int i = 0; i < s.length() - 1; i++) {
             String odd = expandAroundCenter(s, i, i);
-            String even = expandAroundCenter(s, i, i + 1);
+            String even = expandAroundCenter(s, i, i + 1); // For cases like "cbbd"
             if (odd.length() > longest.length()) {
                 longest = odd;
             }
@@ -28,7 +28,7 @@ public class LeetCode5_LongestPalindromicSubstring {
             left--;
             right++;
         }
-        return s.substring(left + 1, right);
+        return s.substring(left + 1, right); // Here we are returning left + 1 as we updated left-- and right++ on line 27, and the next set of characters are not matching
     }
 
     static void test(String s) {
