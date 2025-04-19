@@ -2,12 +2,12 @@
 
 ### Blind 75
 
-| #  | Link                                                                                            | Solution                                                                                                                        |
-|----|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| 1  | [Contains duplicate](https://leetcode.com/problems/contains-duplicate/)           | [Solution](https://github.com/cbsingh1/DataStructureWithJava/blob/main/src/main/java/com/cbsingh/blind75/LeetCode217_ContainsDuplicate.java) |
-| 12 | [Best time to buy/sell stocks](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | [Solution](https://github.com/cbsingh1/DataStructureWithJava/blob/main/src/main/java/com/cbsingh/blind75/Problem2_BestTimeToBuyAndSellStock.java) |
+| #  | Link                                                                                            | Solution                                                                                                                                             |
+|----|-------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1  | [Contains duplicate](https://leetcode.com/problems/contains-duplicate/)           | [Solution](https://github.com/cbsingh1/DataStructureWithJava/blob/main/src/main/java/com/cbsingh/leetcode/LeetCode217_ContainsDuplicate.java)        |
+| 12 | [Best time to buy/sell stocks](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | [Solution](https://github.com/cbsingh1/DataStructureWithJava/blob/main/src/main/java/com/cbsingh/leetcode/LeetCode121_BestTimeToBuyAndSellStock.java)   |
 |    | [Product of array except self](https://leetcode.com/problems/product-of-array-except-self)      | [Solution](https://github.com/cbsingh1/DataStructureWithJava/blob/main/src/main/java/com/cbsingh/leetcode/LeetCode238_ProductOfArrayExceptSelf.java) |
-|    | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray)                              | [Solution](https://github.com/cbsingh1/DataStructureWithJava/blob/main/src/main/java/com/cbsingh/leetcode/LeetCode53_MaxSubArray.java) |
+|    | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray)                              | [Solution](https://github.com/cbsingh1/DataStructureWithJava/blob/main/src/main/java/com/cbsingh/leetcode/LeetCode53_MaxSubArray.java)               |
 
 
 ### Leetcode
