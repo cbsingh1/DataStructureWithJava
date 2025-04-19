@@ -1,4 +1,4 @@
-package com.cbsingh.ModelClasses;
+package com.cbsingh.chainedHashTable;
 
 public class StoredEmployee {
     private String key;

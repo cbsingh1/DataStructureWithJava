@@ -1,8 +1,6 @@
-package com.cbsingh.javaBasics;
+package com.cbsingh.leetcode;
 
-import java.util.Arrays;
-
-public class LeetCode2187_MinTimeToCompleteTrips {
+public class Leetcode2187_MinTimeToCompleteTrips {
     public static void main(String[] args) {
 
         System.out.println(minimumTime(new int[] {1,2,3}, 5));

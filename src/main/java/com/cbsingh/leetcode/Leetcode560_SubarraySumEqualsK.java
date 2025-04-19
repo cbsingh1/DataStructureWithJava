@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Leetcode560_SubarraySumEqualsK {
     //Time complexity : O(n) The entire nums array is traversed only once.
-    //Space complexity : O(n) Hashmap map can contain up to n distinct entries in the worst case.
+    //Space complexity : O(n) Hashmap chainedHashTable can contain up to n distinct entries in the worst case.
     public int subarraySum(int[] nums, int k) {
         int count = 0, sum = 0;
         var map = new HashMap<Integer, Integer>();

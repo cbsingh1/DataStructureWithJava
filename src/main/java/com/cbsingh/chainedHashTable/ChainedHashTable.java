@@ -1,7 +1,4 @@
-package com.cbsingh.map;
-
-import com.cbsingh.ModelClasses.Employee;
-import com.cbsingh.ModelClasses.StoredEmployee;
+package com.cbsingh.chainedHashTable;
 
 import java.util.LinkedList;
 import java.util.ListIterator;
