@@ -2,7 +2,7 @@ package com.cbsingh.leetcode;
 
 import java.util.Arrays;
 
-public class LeetCode238_ProductOfArrayExceptSelf {
+public class Leetcode238_ProductOfArrayExceptSelf {
     public int[] productExceptSelf(int[] nums) {
         int[] result = new int[nums.length];
         int leftProduct = 1, rightProduct = 1;
@@ -19,7 +19,7 @@ public class LeetCode238_ProductOfArrayExceptSelf {
     }
 
     public static void main(String[] args) {
-        var solution = new LeetCode238_ProductOfArrayExceptSelf();
+        var solution = new Leetcode238_ProductOfArrayExceptSelf();
         int[] result = solution.productExceptSelf(new int[]{1, 2, 3, 4});
         //Expected output = [24,12,8,6]
         System.out.println(Arrays.toString(result));
