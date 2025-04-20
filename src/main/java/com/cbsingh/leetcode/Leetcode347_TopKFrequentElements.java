@@ -32,21 +32,28 @@ public class Leetcode347_TopKFrequentElements {
         //Array of size nums.length + 1 is created to handle the case where all elements are the same,
         // then frequency of that element = nums.length. So array index start with 0, so we are adding 1 to handle that case
         List<Integer>[] freqArr = new ArrayList[nums.length + 1];
-        for (int num : frequencyMap.keySet()) {
-            int freq = frequencyMap.get(num);
+        for (var entry : frequencyMap.entrySet()) {
+            int freq = entry.getValue();
             if(freqArr[freq]==null)
                 freqArr[freq] = new ArrayList<>();
 
-            freqArr[freq].add(num);
+            freqArr[freq].add(entry.getKey());
         }
 
-        List<Integer> result = new ArrayList<>();
-        for (int i = freqArr.length-1; i >=0; i--) {
-            if(freqArr[i]!=null)
-                result.addAll(freqArr[i]);
-            if(result.size() >= k) break;
+        int[] res = new int[k];
+        int idx = 0;
+        for (int i = freqArr.length - 1; i >= 0; i--) {
+            if (freqArr[i] != null){
+                for (int num : freqArr[i]) {
+                    res[idx++] = num;
+                    if (idx == k) {
+                        return res;
+                    }
+                }
+            }
         }
-        return result.stream().mapToInt(Integer::intValue).toArray();
+
+        return new int[0];
     }
 
     int[] uniqueArr;
