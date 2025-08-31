@@ -30,7 +30,7 @@ public class Leetcode347_TopKFrequentElements {
 
         //Create an array of size nums.length + 1, where each index represents the frequency of the element.
         //Array of size nums.length + 1 is created to handle the case where all elements are the same,
-        // then frequency of that element = nums.length. So array index start with 0, so we are adding 1 to handle that case
+        // then frequency of that element = nums.length. As array index starts with 0, so we are adding 1 to handle that case
         List<Integer>[] freqArr = new ArrayList[nums.length + 1];
         for (var entry : frequencyMap.entrySet()) {
             int freq = entry.getValue();
@@ -107,7 +107,7 @@ public class Leetcode347_TopKFrequentElements {
         swap(pivotIndex, right);
         int storeIndex = left;
 
-        //2. Move all lest frequent elements to left
+        //2. Move all less frequent elements to the left
         for (int i = left; i <= right; i++) {
             if (freqMap.get(uniqueArr[i]) < pivotFrequency) {
                 swap(storeIndex, i);
@@ -115,7 +115,7 @@ public class Leetcode347_TopKFrequentElements {
             }
         }
 
-        //3. Move pivot to it's final position
+        //3. Move pivot to its final position
         swap(storeIndex, right);
 
         return storeIndex;
